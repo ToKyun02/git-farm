@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     'channels',
     'corsheaders',
     'social_django',
+    # Local apps
+    'accounts',
+    'game',
 ]
 
 MIDDLEWARE = [
@@ -94,6 +97,9 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+# Custom User Model
+AUTH_USER_MODEL = 'accounts.User'
 
 
 # Authentication
