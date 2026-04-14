@@ -1,6 +1,3 @@
-## ❓이슈
-- close #이슈번호
-
 ## :writing_hand: Description
 
 <!-- 어떤 내용의 PR인지 작성해주세요. (ex. 메인 페이지 레이아웃 작업) -->
