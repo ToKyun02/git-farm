@@ -1,0 +1,30 @@
+name: Mattermost Notify
+
+on:
+  pull_request:
+    types:
+      - opened # PR 생성
+      - closed # PR 닫힘/머지
+      - review_requested # 리뷰 요청
+  pull_request_review:
+    types:
+      - submitted # 리뷰 제출
+      - edited # 리뷰 수정
+      - dismissed # 리뷰 기각
+  pull_request_review_comment:
+    types:
+      - created # 리뷰 코멘트 작성
+      - edited # 리뷰 코멘트 수정
+      - deleted # 리뷰 코멘트 삭제
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Mattermost Notification
+        run: |
+          curl -X POST ${{ secrets.MATTERMOST_WEBHOOK_URL }} \
+          -H 'Content-Type: application/json' \
+          -d "{
+            \"text\": \"### 🔔 GitHub 알림\\n**저장소:** ${{ github.repository }}\\n**이벤트:** ${{ github.event_name }}\\n**작성자:** ${{ github.actor }}\\n**PR:** ${{ github.event.pull_request.title }}\\n**링크:** ${{ github.event.pull_request.html_url }}\"
+          }"
