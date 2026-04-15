@@ -128,6 +128,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.associate_user',
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
+    'accounts.pipeline.save_github_id', # GitHub ID를 User 모델에 저장
 )
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('GOOGLE_CLIENT_ID', '')
@@ -136,7 +137,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email', 'profile']
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 LOGIN_URL = '/api/auth/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/api/auth/callback/'
 LOGOUT_REDIRECT_URL = '/'
 
 
