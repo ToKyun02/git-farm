@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
@@ -17,7 +18,4 @@ class GitHubLoginCallbackView(APIView):
        
         refresh = RefreshToken.for_user(user)
 
-        return Response({
-           'access':str(refresh.access_token),
-           'refresh':str(refresh)
-        })
+        return redirect(f'http://localhost:5173/callback?access={str(refresh.access_token)}&refresh={str(refresh)}')
