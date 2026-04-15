@@ -70,15 +70,15 @@
     "devDependencies": {
         "@eslint/js": "^9.39.4",
         "@storybook/addon-a11y": "^8.6.18",
-        "@storybook/addon-essentials": "^8.6.14",
-        "@storybook/addon-interactions": "^8.6.14",
-        "@storybook/blocks": "^8.6.14",
+        "@storybook/addon-essentials": "^8.6.18",
+        "@storybook/addon-interactions": "^8.6.18",
+        "@storybook/blocks": "^8.6.18",
         "@storybook/react": "^8.6.18",
         "@storybook/react-vite": "^8.6.18",
         "@types/node": "^24.12.2",
         "@types/react": "^19.2.14",
         "@types/react-dom": "^19.2.3",
-        "@vitejs/plugin-react": "^6.0.1",
+        "@vitejs/plugin-react": "^5.2.0",
         "eslint": "^9.39.4",
         "eslint-config-prettier": "^10.1.5",
         "eslint-plugin-react-hooks": "^7.0.1",
@@ -93,7 +93,7 @@
         "storybook": "^8.6.18",
         "typescript": "~6.0.2",
         "typescript-eslint": "^8.58.0",
-        "vite": "^8.0.4"
+        "vite": "^6.0.0"
     },
     "lint-staged": {
         "*.{ts,tsx}": [
