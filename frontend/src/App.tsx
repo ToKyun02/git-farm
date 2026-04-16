@@ -1,11 +1,13 @@
+import ky from 'ky';
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
 function MainPage() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:8000/api/auth/me/', { credentials: 'include' }).then((res) => setIsLoggedIn(res.ok));
+        ky.get('http://localhost:8000/api/auth/me/', { credentials: 'include' })
+            .then(() => setIsLoggedIn(true))
+            .catch(() => setIsLoggedIn(false));
     }, []);
 
     // 로그인 버튼 클릭 → 백엔드 OAuth URL로 이동
@@ -15,10 +17,7 @@ function MainPage() {
 
     // 로그아웃 버튼 클릭 → 토큰 삭제 후 새로고침
     const handleLogout = async () => {
-        await fetch('http://localhost:8000/api/auth/logout/', {
-            method: 'POST',
-            credentials: 'include',
-        });
+        await ky.post('http://localhost:8000/api/auth/logout/', { credentials: 'include' });
         window.location.reload();
     };
 
