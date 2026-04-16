@@ -1,5 +1,6 @@
 from django.shortcuts import redirect
 from django.conf import settings
+from .serializers import UserSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
@@ -53,6 +54,7 @@ class CookieTokenRefreshView(TokenRefreshView):
     
 
 class LogoutView(APIView):
+    
     def post(self, request):
         response = Response(status=204)
         response.delete_cookie('access')
@@ -61,5 +63,15 @@ class LogoutView(APIView):
     
     
 class UserMeView(APIView):
+
     def get(self, request):
-        return Response({'username': request.user.username})
+        serializer = UserSerializer(request.user)
+        return Response(serializer.data)
+    
+
+    def patch(self, request):
+        serializer = UserSerializer(request.user, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)

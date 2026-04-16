@@ -9,6 +9,7 @@ from accounts.views import CookieTokenRefreshView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('accounts.urls')),
+    path('api/users/', include('accounts.user_urls')),
     # JWT 인증
     path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/auth/token/refresh/', CookieTokenRefreshView.as_view(), name='token_refresh'),
