@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class User(AbstractUser):
-    github_id = models.IntegerField(unique=True)
+    github_id = models.IntegerField(unique=True, null=True, blank=True)
     avatar_url = models.URLField(blank=True)
     gold = models.IntegerField(default=0)
     github_access_token = models.CharField(max_length=255)
