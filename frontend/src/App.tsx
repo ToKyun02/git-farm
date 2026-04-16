@@ -1,19 +1,24 @@
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Callback from './pages/Callback';
 
 function MainPage() {
-    // localStorage에 토큰이 있으면 로그인 상태로 판단
-    const isLoggedIn = Boolean(localStorage.getItem('access_token'));
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        fetch('http://localhost:8000/api/auth/me/', { credentials: 'include' }).then((res) => setIsLoggedIn(res.ok));
+    }, []);
 
     // 로그인 버튼 클릭 → 백엔드 OAuth URL로 이동
     const handleLogin = () => {
-        window.location.href = 'http://localhost:8000/api/auth/social/login/github/';
+        window.location.href = 'http://localhost:8000/api/auth/login/';
     };
 
     // 로그아웃 버튼 클릭 → 토큰 삭제 후 새로고침
-    const handleLogout = () => {
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('refresh_token');
+    const handleLogout = async () => {
+        await fetch('http://localhost:8000/api/auth/logout/', {
+            method: 'POST',
+            credentials: 'include',
+        });
         window.location.reload();
     };
 
@@ -37,7 +42,6 @@ function App() {
     return (
         <Routes>
             <Route path='/' element={<MainPage />} />
-            <Route path='/callback' element={<Callback />} />
         </Routes>
     );
 }
