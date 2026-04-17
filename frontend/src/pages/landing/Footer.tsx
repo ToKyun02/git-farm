@@ -1,3 +1,5 @@
+import logo from '@/assets/logo.png';
+
 const SUPPORT_LINKS = ['문서', 'FAQ', '연락처', '개인정보처리방침'];
 
 export default function Footer() {
@@ -7,7 +9,7 @@ export default function Footer() {
                 <div className='flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left'>
                     <div className='shrink-0'>
                         <div className='mb-2 flex items-center justify-center gap-2 text-lg font-bold sm:justify-start'>
-                            <span>🌾</span>
+                            <img src={logo} alt='Git-Farm 로고' className='h-6 w-6' />
                             <span>Git-Farm</span>
                         </div>
                         <p className='text-muted-foreground text-sm'>코드가 마을이 되는 세상</p>

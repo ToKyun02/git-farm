@@ -1,3 +1,4 @@
+import logo from '@/assets/logo.png';
 import GithubIcon from '@/components/icons/GithubIcon';
 import { GameButton } from '@/design-system/game/GameButton';
 import { Moon, Sun } from 'lucide-react';
@@ -41,7 +42,7 @@ export default function Navbar() {
         >
             <div className='mx-auto flex max-w-6xl items-center justify-between px-6 py-4'>
                 <div className='flex items-center gap-2 text-xl font-bold'>
-                    <span className='text-2xl'>🌾</span>
+                    <img src={logo} alt='' className='h-8 w-8' />
                     <span>Git-Farm</span>
                 </div>
                 <div className='flex items-center gap-2'>
