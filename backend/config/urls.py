@@ -16,4 +16,6 @@ urlpatterns = [
 
     # Social OAuth (GitHub, Google 등)
     path('api/auth/social/', include('social_django.urls', namespace='social')),
+    
+    path('api/game/', include('game.urls')),
 ]
