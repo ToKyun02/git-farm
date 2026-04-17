@@ -67,38 +67,44 @@
 
 .dark {
     /* Dark mode: Cozy night theme */
-    --background: oklch(0.18 0.02 260);
+    --background: oklch(0.16 0.015 260);
     --foreground: oklch(0.95 0.01 80);
 
+    /* 카드: 배경 대비 확보 */
     --card: oklch(0.22 0.02 260);
     --card-foreground: oklch(0.95 0.01 80);
 
     --popover: oklch(0.22 0.02 260);
     --popover-foreground: oklch(0.95 0.01 80);
 
-    --primary: oklch(0.75 0.14 35);
-    --primary-foreground: oklch(0.15 0.02 35);
+    /* Primary: 버튼 텍스트를 흰색으로 */
+    --primary: oklch(0.76 0.15 35);
+    --primary-foreground: oklch(0.99 0 0);
 
-    --secondary: oklch(0.35 0.06 290);
-    --secondary-foreground: oklch(0.9 0.04 290);
+    --secondary: oklch(0.32 0.06 290);
+    --secondary-foreground: oklch(0.92 0.04 290);
 
-    --muted: oklch(0.28 0.02 260);
-    --muted-foreground: oklch(0.65 0.02 80);
+    --muted: oklch(0.26 0.02 260);
+    --muted-foreground: oklch(0.72 0.015 80);
 
-    --accent: oklch(0.5 0.1 220);
+    /* Accent: 더 밝게 */
+    --accent: oklch(0.58 0.13 220);
     --accent-foreground: oklch(0.95 0.02 220);
 
-    --gold: oklch(0.78 0.14 85);
-    --gold-foreground: oklch(0.2 0.04 85);
-    --success: oklch(0.65 0.14 145);
-    --success-foreground: oklch(0.15 0.04 145);
+    /* Gold: 뱃지용 foreground를 밝은 앰버로
+       버튼(bg-gold 위)은 GameButton에서 dark:text-foreground로 오버라이드 */
+    --gold: oklch(0.8 0.17 85);
+    --gold-foreground: oklch(0.9 0.18 85);
+    --success: oklch(0.72 0.18 145);
+    --success-foreground: oklch(0.99 0 0);
 
-    --destructive: oklch(0.55 0.2 25);
-    --destructive-foreground: oklch(0.95 0.02 25);
+    --destructive: oklch(0.6 0.22 25);
+    --destructive-foreground: oklch(0.99 0 0);
 
-    --border: oklch(0.32 0.02 260);
+    /* 테두리: 가시성 개선 */
+    --border: oklch(0.34 0.025 260);
     --input: oklch(0.28 0.02 260);
-    --ring: oklch(0.75 0.14 35);
+    --ring: oklch(0.76 0.15 35);
 
     --chart-1: oklch(0.75 0.14 35);
     --chart-2: oklch(0.65 0.14 145);
@@ -259,5 +265,16 @@
     }
     100% {
         background-position: 200% 0;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

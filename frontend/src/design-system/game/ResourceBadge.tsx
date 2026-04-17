@@ -6,7 +6,7 @@ const resourceBadgeVariants = cva(['inline-flex items-center gap-1.5', 'font-mon
     variants: {
         resource: {
             gold: ['bg-gold/20 text-gold-foreground border-gold/40'],
-            commits: ['bg-success/20 text-success border-success/40'],
+            commits: ['bg-success/20 text-success dark:text-success border-success/40'],
             stars: ['bg-accent/20 text-accent-foreground border-accent/40'],
             energy: ['bg-primary/20 text-primary border-primary/40'],
         },

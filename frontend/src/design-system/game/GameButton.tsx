@@ -14,7 +14,12 @@ const gameButtonVariants = cva(
             variant: {
                 primary: ['bg-primary text-primary-foreground', 'hover:brightness-110', 'shadow-[var(--shadow-game)] hover:shadow-[var(--shadow-game-hover)]'],
                 secondary: ['bg-secondary text-secondary-foreground', 'hover:bg-secondary/80', 'border-2 border-secondary-foreground/20'],
-                gold: ['bg-gold text-gold-foreground', 'hover:brightness-110', 'shadow-[var(--shadow-game)] hover:shadow-[var(--shadow-game-hover)]', 'animate-[pulse-glow_2s_ease-in-out_infinite]'],
+                gold: [
+                    'bg-gold text-gold-foreground dark:text-foreground',
+                    'hover:brightness-110',
+                    'shadow-[var(--shadow-game)] hover:shadow-[var(--shadow-game-hover)]',
+                    'animate-[pulse-glow_2s_ease-in-out_infinite]',
+                ],
                 success: ['bg-success text-success-foreground', 'hover:brightness-110', 'shadow-[var(--shadow-game)]'],
                 ghost: ['bg-transparent text-foreground', 'hover:bg-muted'],
                 outline: ['bg-transparent text-foreground', 'border-2 border-border', 'hover:bg-muted hover:border-foreground/30'],

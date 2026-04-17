@@ -6,10 +6,10 @@ const gamePanelVariants = cva(['backdrop-blur-sm border-2 transition-all duratio
     variants: {
         variant: {
             default: ['bg-card/95 border-border', 'shadow-lg'],
-            elevated: ['bg-card border-border', 'shadow-[var(--shadow-game)]'],
-            accent: ['bg-accent/30 border-accent'],
-            gold: ['bg-gold/10 border-gold/50', 'shadow-lg'],
-            glass: ['bg-background/60 border-border/50', 'backdrop-blur-md'],
+            elevated: ['bg-card border-border dark:border-border/80', 'shadow-[var(--shadow-game)]'],
+            accent: ['bg-accent/30 border-accent dark:bg-accent/20'],
+            gold: ['bg-gold/10 border-gold/50 dark:bg-gold/15 dark:border-gold/60', 'shadow-lg'],
+            glass: ['bg-background/60 border-border/50 dark:bg-background/40 dark:border-border/30', 'backdrop-blur-md'],
             solid: ['bg-card border-border', 'shadow-md'],
         },
         size: {
