@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import GitHubLoginCallbackView, LogoutView, UserMeView, login
+from .views import GitHubLoginCallbackView, LogoutView, login, UserMeView
 
 urlpatterns = [
     path('callback/', GitHubLoginCallbackView.as_view()),
