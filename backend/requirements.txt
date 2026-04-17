@@ -19,7 +19,6 @@ daphne==4.2.1
 defusedxml==0.7.1
 deprecation==2.1.0
 Django==5.2.13
-django-channels==0.7.0
 django-cors-headers==4.9.0
 djangorestframework==3.17.1
 djangorestframework_simplejwt==5.5.1
