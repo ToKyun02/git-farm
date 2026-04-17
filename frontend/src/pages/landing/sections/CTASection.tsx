@@ -1,3 +1,4 @@
+import logo from '@/assets/logo.png';
 import GithubIcon from '@/components/icons/GithubIcon';
 import { GameButton } from '@/design-system/game/GameButton';
 import { GamePanel } from '@/design-system/game/GamePanel';
@@ -29,8 +30,8 @@ export default function CTASection() {
                         ))}
                     </div>
                     <div className='relative flex flex-col items-center gap-6'>
-                        <motion.div className='text-6xl' animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
-                            🌾
+                        <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+                            <img src={logo} alt='Git-Farm 로고' className='h-16 w-16' />
                         </motion.div>
                         <h2 className='text-3xl font-extrabold md:text-4xl'>지금 당장 마을을 키워보세요</h2>
                         <p className='text-muted-foreground max-w-md text-lg'>GitHub 계정만 있으면 바로 시작! 첫 커밋에 500 Gold 지급</p>
