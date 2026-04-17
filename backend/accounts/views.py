@@ -22,7 +22,7 @@ class GitHubLoginCallbackView(APIView):
        
         refresh = RefreshToken.for_user(user)
         response = redirect('http://localhost:5173/')
-        response.set_cookie('access', str(refresh.access_token), max_age=10800, secure=not settings.DEBUG, httponly=True, samesite='Lax')
+        response.set_cookie('access', str(refresh.access_token), max_age=10, secure=not settings.DEBUG, httponly=True, samesite='Lax')
         response.set_cookie('refresh', str(refresh), max_age=604800, secure=not settings.DEBUG, httponly=True, samesite='Lax')
         return response
 
@@ -48,7 +48,7 @@ class CookieTokenRefreshView(TokenRefreshView):
         
         # 5. 응답에서 새 access 토큰 꺼내서 쿠키에 담기
         new_access = response.data.get('access')
-        response.set_cookie('access', new_access, max_age=10800, secure=not settings.DEBUG, httponly=True, samesite='Lax')
+        response.set_cookie('access', new_access, max_age=10, secure=not settings.DEBUG, httponly=True, samesite='Lax')
         
         return response
     

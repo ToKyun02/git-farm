@@ -1,8 +1,5 @@
 import client from '@/utils/clientHelper';
-
-export type UserMe = {
-    username: string;
-};
+import type { UserMe } from './types';
 
 export function login() {
     window.location.href = `${import.meta.env.VITE_BASE_URL}/api/auth/login/`;
